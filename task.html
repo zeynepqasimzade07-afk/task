@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="task.css">
+    <title>Sənədləşdirmə</title>
+</head>
+<body>
+
+    <!-- MOBIL YUXARI PANEL (yalniz kicik ekranlarda gorunur) -->
+    <div class="mobile-topbar" id="mobileTopbar">
+        <button class="menu-btn" id="menuBtn" aria-label="Menyu">
+            <span></span><span></span><span></span>
+        </button>
+        <span class="mobile-title" id="mobileTitle">Sənədləşdirmə</span>
+    </div>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <div class="layout">
+
+        <!-- SOL TƏRƏF: BAŞLIQLAR AĞACI -->
+        <aside class="sidebar" id="sidebar">
+
+            <div class="tree-block">
+                <div class="tree-block-header">
+                    <span class="chevron">&#8250;</span>
+                    <span class="block-title">1. Nomenklatura və məhsul kartları</span>
+                </div>
+                <div class="tree-subs">
+                    <div class="tree-sub" data-target="b1-s1">1.1. Yeni məhsulun yaradılması</div>
+                    <div class="tree-sub" data-target="b1-s2">1.2. Kateqoriyalar və qruplar</div>
+                    <div class="tree-sub" data-target="b1-s3">1.3. Qiymətlər və marja</div>
+                </div>
+            </div>
+
+            <div class="tree-block">
+                <div class="tree-block-header">
+                    <span class="chevron">&#8250;</span>
+                    <span class="block-title">2. Anbar uçotu (Malların hərəkəti)</span>
+                </div>
+                <div class="tree-subs">
+                    <div class="tree-sub" data-target="b2-s1">2.1. Mədaxil (Malın qəbulu)</div>
+                    <div class="tree-sub" data-target="b2-s2">2.2. Silinmə (Məxaric / Spisaniye)</div>
+                    <div class="tree-sub" data-target="b2-s3">2.3. Anbarlararası yerdəyişmə (Transfer)</div>
+                    <div class="tree-sub" data-target="b2-s4">2.4. İnventarizasiya (Sayım)</div>
+                </div>
+            </div>
+
+            <div class="tree-block">
+                <div class="tree-block-header">
+                    <span class="chevron">&#8250;</span>
+                    <span class="block-title">3. Kassa modulu (POS terminal)</span>
+                </div>
+                <div class="tree-subs">
+                    <div class="tree-sub" data-target="b3-s1">3.1. İş gününün başlanması və bağlanması</div>
+                    <div class="tree-sub" data-target="b3-s2">3.2. Çekin vurulması</div>
+                    <div class="tree-sub" data-target="b3-s3">3.3. Ödəniş və qarışıq ödəniş növləri</div>
+                    <div class="tree-sub" data-target="b3-s4">3.4. Geri qaytarma (İadə) və ləğvetmə</div>
+                </div>
+            </div>
+
+            <div class="tree-block">
+                <div class="tree-block-header">
+                    <span class="chevron">&#8250;</span>
+                    <span class="block-title">4. Maliyyə və hesablaşmalar</span>
+                </div>
+                <div class="tree-subs">
+                    <div class="tree-sub" data-target="b4-s1">4.1. Borclar və təchizatçılarla hesablaşma</div>
+                    <div class="tree-sub" data-target="b4-s2">4.2. Şirkətin xərcləri</div>
+                </div>
+            </div>
+
+            <div class="tree-block">
+                <div class="tree-block-header">
+                    <span class="chevron">&#8250;</span>
+                    <span class="block-title">5. İstehsalat (İstehsal prosesi və kalkulyasiya)</span>
+                </div>
+                <div class="tree-subs">
+                    <div class="tree-sub" data-target="b5-s1">5.1. Texnoloji xəritələr (Reseptura)</div>
+                    <div class="tree-sub" data-target="b5-s2">5.2. İstehsalat aktı (Buraxılış)</div>
+                    <div class="tree-sub" data-target="b5-s3">5.3. Yarımfabrikatlar</div>
+                </div>
+            </div>
+
+            <div class="tree-block">
+                <div class="tree-block-header">
+                    <span class="chevron">&#8250;</span>
+                    <span class="block-title">6. Restoran modulu (Zal, Mətbəx və Qonaqlara xidmət)</span>
+                </div>
+                <div class="tree-subs">
+                    <div class="tree-sub" data-target="b6-s1">6.1. Zal və masaların idarə edilməsi</div>
+                    <div class="tree-sub" data-target="b6-s2">6.2. Sifarişin qəbulu və modifikatorlar</div>
+                    <div class="tree-sub" data-target="b6-s3">6.3. Hesabın bölünməsi və bağlanması</div>
+                </div>
+            </div>
+
+            <div class="tree-block">
+                <div class="tree-block-header">
+                    <span class="chevron">&#8250;</span>
+                    <span class="block-title">7. CRM və Müştərilərlə iş</span>
+                </div>
+                <div class="tree-subs">
+                    <div class="tree-sub" data-target="b7-s1">7.1. Müştəri bazası və profili</div>
+                    <div class="tree-sub" data-target="b7-s2">7.2. Loyallıq sistemi və bonuslar</div>
+                    <div class="tree-sub" data-target="b7-s3">7.3. Borc limitləri (Nisyə satışı)</div>
+                </div>
+            </div>
+
+            <div class="tree-block">
+                <div class="tree-block-header">
+                    <span class="chevron">&#8250;</span>
+                    <span class="block-title">8. Mühasibatlıq və Maliyyə hesabatları</span>
+                </div>
+                <div class="tree-subs">
+                    <div class="tree-sub" data-target="b8-s1">8.1. Hesablar və kassalar</div>
+                    <div class="tree-sub" data-target="b8-s2">8.2. Əsas maliyyə hesabatları</div>
+                    <div class="tree-sub" data-target="b8-s3">8.3. Qarşılıqlı üzləşmə aktları (Akt sverki)</div>
+                </div>
+            </div>
+
+            <div class="tree-block">
+                <div class="tree-block-header">
+                    <span class="chevron">&#8250;</span>
+                    <span class="block-title">9. HR və Əməkhaqqı (Kadrlar)</span>
+                </div>
+                <div class="tree-subs">
+                    <div class="tree-sub" data-target="b9-s1">9.1. Əməkdaş profili və giriş hüquqları</div>
+                    <div class="tree-sub" data-target="b9-s2">9.2. İş vaxtının uçotu</div>
+                    <div class="tree-sub" data-target="b9-s3">9.3. Əməkhaqqı hesablanması</div>
+                </div>
+            </div>
+
+            <div class="tree-block">
+                <div class="tree-block-header">
+                    <span class="chevron">&#8250;</span>
+                    <span class="block-title">10. Sistem tənzimləmələri və Avadanlıqlar</span>
+                </div>
+                <div class="tree-subs">
+                    <div class="tree-sub" data-target="b10-s1">10.1. Ticarət avadanlıqlarının qoşulması</div>
+                    <div class="tree-sub" data-target="b10-s2">10.2. Filial və anbar strukturu</div>
+                </div>
+            </div>
+
+            <div class="tree-block">
+                <div class="tree-block-header">
+                    <span class="chevron">&#8250;</span>
+                    <span class="block-title">11. Texniki nasazlıqlar və FAQ</span>
+                </div>
+                <div class="tree-subs">
+                    <div class="tree-sub" data-target="b11-s1">11.1. Problemlərin həlli</div>
+                </div>
+            </div>
+
+        </aside>
+
+        <!-- SAĞ TƏRƏF: SUAL VƏ CAVABLAR -->
+        <main class="content" id="content">
+
+            <div class="placeholder" id="placeholder"></div>
+
+            <!-- 1.1 -->
+            <section class="qa-section" id="b1-s1">
+                <div class="content-heading">
+                    <h1 class="content-eyebrow">1. Nomenklatura və məhsul kartları</h1>
+                    <h2>1.1. Yeni məhsulun yaradılması</h2>
+                </div>
+
+                <div class="qa-item">
+                    <p class="qa-question">Hansı xanaların doldurulması mütləqdir (ad, barkod, ölçü vahidi, ƏDV dərəcəsi)?</p>
+
+                    <div class="qa-answer qa-answer--rich">
+                        <p>Yeni məhsulun əlavə edilməsi üçün aşağıdakı düyməyə klik edilir:</p>
+                        <img src="image/yeni.jpg" class="qa-image qa-image--auto" alt="Yeni məhsul əlavə et düyməsi">
+
+                        <img src="image/esas.jpg" class="qa-image" alt="Əsas bölməsi">
+                        <h3 class="answer-subtitle">Əsas bölməsində</h3>
+                        <div class="field-list">
+                            <p><strong>Ad</strong> — məhsulun adı; mütləq doldurulmalıdır (qırmızı ulduzla işarələnib).</p>
+                            <p><strong>Kateqoriya</strong> — məhsulun aid olduğu kateqoriya seçilir; yoxdursa "+" ilə yeni kateqoriya yaradıla bilər.</p>
+                            <p><strong>Şöbə</strong> — məhsulun bağlı olduğu şöbə seçilir; eyni şəkildə "+" ilə yenisi əlavə edilə bilər.</p>
+                            <p><strong>Növ</strong> — məhsulun tipi seçilir (məsələn "Məhsul").</p>
+                            <p><strong>Alış Qiyməti</strong> — məhsulun təchizatçıdan alındığı qiymət yazılır.</p>
+                            <p><strong>Qiymət</strong> — müştəriyə satılacaq son qiymət yazılır.</p>
+                            <p><strong>Minimum Qiymət</strong> — endirim zamanı qiymətin düşə biləcəyi ən aşağı hədd göstərilir.</p>
+                            <p><strong>"+ Qiymət növü əlavə et"</strong> — istəyə görə əlavə qiymət tipləri (topdan, VIP və s.) yaratmaq üçün.</p>
+                            <p><strong>Barkod</strong> — məhsulun barkodu; əllə yazıla və ya skanerlə oxudula bilər.</p>
+                            <p><strong>Vahid</strong> — ölçü vahidi (ədəd, kq və s.) seçilir.</p>
+                            <p><strong>Minimal qalıq</strong> — anbarda bu miqdardan aşağı düşəndə xəbərdarlıq üçün hədd göstərilir.</p>
+                            <p><strong>Çəkili məhsul</strong> — açar aktiv edilərsə, məhsul ədədlə deyil, çəki ilə (kq/qram) satılan kimi qeyd olunur.</p>
+                        </div>
+
+                        <div class="answer-divider"></div>
+
+                        <img src="image/diger.jpg" class="qa-image" alt="Digər bölməsi">
+                        <h3 class="answer-subtitle">Digər bölməsində</h3>
+                        <div class="field-list">
+                            <p><strong>Açıqlama</strong> — məhsul haqqında əlavə qeyd və izahat üçün sahə.</p>
+                            <p><strong>Ödənişsizdir</strong> — açar aktiv edilərsə, məhsul pulsuz (nümunə, hədiyyə və s.) kimi qeyd olunur.</p>
+                            <p><strong>Rəng</strong> — məhsula sistemdə vizual fərqləndirmə üçün rəng kodu (#000000 kimi) təyin edilir.</p>
+                        </div>
+
+                        <div class="answer-divider"></div>
+
+                        <img src="image/muhasibat.jpg" class="qa-image" alt="Mühasibatlıq bölməsi">
+                        <h3 class="answer-subtitle">Mühasibatlıq bölməsində</h3>
+                        <div class="field-list">
+                            <p><strong>Vergi</strong> — məhsula aid vergi dərəcəsi (ƏDV) seçilir.</p>
+                            <p><strong>Satış gəliri hesabı</strong> — satışdan əldə olunan gəlirin yazılacağı mühasibat hesabı.</p>
+                            <p><strong>Maya dəyəri hesabı</strong> — satış zamanı məhsulun maya dəyərinin köçürüləcəyi hesab.</p>
+                            <p><strong>Ehtiyat hesabı</strong> — anbardakı satılmamış qalığın dəyərinin göstərildiyi hesab.</p>
+                        </div>
+
+                        <div class="answer-divider"></div>
+
+                        <img src="image/techizat.jpg" class="qa-image" alt="Təchizatçılar bölməsi">
+                        <h3 class="answer-subtitle">Təchizatçılar bölməsində</h3>
+                        <p>Təchizatçı sütunu məhsulu təmin edən təchizatçının adının göstərildiyi yerdir.</p>
+
+                        <div class="answer-divider"></div>
+
+                        <img src="image/qablasdirma.jpg" class="qa-image" alt="Qablaşdırma bölməsi">
+                        <h3 class="answer-subtitle">Qablaşdırma bölməsində</h3>
+                        <p>Eyni məhsulu bir neçə fərqli ölçüdə (qablaşdırma formasında) satmaq mümkün olur — məsələn məhsul əsas vahiddə (ədəd, kq) uçota alınsa da, müştəriyə bəzən tək-tək, bəzən isə toplu (qutu, karton, paket) şəkildə satıla bilər. Bu bölmədə hər qablaşdırma növü üçün ayrıca miqdar, qiymət və barkod təyin olunur ki, kassada hansı forma seçilirsə seçilsin, sistem anbardakı əsas vahidə görə düzgün silmə aparsın və doğru qiymətlə satsın.</p>
+
+                        <div class="answer-divider"></div>
+
+                        <img src="image/tekrarsifaris.jpg" class="qa-image" alt="Təkrar sifariş qaydaları bölməsi">
+                        <h3 class="answer-subtitle">Təkrar sifariş qaydaları bölməsində</h3>
+                        <p>Sistem məhsulun anbardakı qalığını özü izləyib, müəyyən hədddən aşağı düşəndə təyin olunmuş təchizatçıya avtomatik (və ya xatırladıcı şəklində) sifariş ehtiyacı yaradır — beləliklə mal bitmədən əvvəl yenidən sifariş vermək unudulmaz.</p>
+                    </div>
+                </div>
+
+                <div class="qa-item">
+                    <p class="qa-question">Barkod necə əlavə olunur: əllə, yoxsa skanerlə? Məhsul çəki ilə və ya ədədlə satıldıqda fərq nədir?</p>
+                    <p class="qa-answer">Barkod həm skanerlə oxudulub sahəyə avtomatik yazıla bilər, həm də klaviaturadan əllə daxil edilə bilər. Ədədlə satılan məhsulda barkod sabit koddur. Çəki ilə satılan məhsulda barkodun içinə çəki tərəzidə kodlaşdırılır və kassa bu kodu oxuyanda çəkini avtomatik tanıyır.</p>
+                </div>
+            </section>
+
+            <!-- 1.2 -->
+            <section class="qa-section" id="b1-s2">
+                <div class="content-heading">
+                    <h1 class="content-eyebrow">1. Nomenklatura və məhsul kartları</h1>
+                    <h2>1.2. Kateqoriyalar və qruplar</h2>
+                </div>
+
+                <div class="qa-item">
+                    <p class="qa-question">Kateqoriya ağacı (qovluqlar və alt qovluqlar) necə qurulur?</p>
+                    <div class="qa-answer qa-answer--rich">
+                        <p>Kateqoriyalar əsas menyu bölməsində "Kateqoriyalar" bölməsindən yaradılır. Əvvəlcə əsas (üst) kateqoriya açılır, sonra onun daxilində alt-kateqoriyalar əlavə edilir. Hər məhsul yaradılarkən ona uyğun kateqoriya seçilir.</p>
+                        <img src="image/kateqoriya.jpg" class="qa-image" alt="Kateqoriyalar bölməsi">
+                        <h3 class="answer-subtitle">Kateqoriyanın yaradılması</h3>
+                        <div class="field-list">
+                            <p><strong>Əsas kateqoriya</strong> — məhsulların aid olduğu əsas qovluq yaradılır.</p>
+                            <p><strong>Alt kateqoriya</strong> — əsas kateqoriyanın daxilində əlavə qovluq yaradılır.</p>
+                            <p><strong>Ana kateqoriya</strong> — alt-kateqoriya yaradılarkən onun hansı əsas kateqoriyaya aid olduğu seçilir.</p>
+                            <p><strong>Məhsul</strong> — məhsul yaradılarkən uyğun kateqoriyaya əlavə olunur.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="qa-item">
+                    <p class="qa-question">Məhsulları bir kateqoriyadan digərinə toplu şəkildə köçürmək mümkündürmü?</p>
+                    <div class="qa-answer qa-answer--rich">
+                        <p>Əksər sistemlərdə bəli — məhsul siyahısında bir neçə məhsul işarələnib "Kateqoriyanı dəyiş" əməliyyatı ilə hamısı eyni vaxtda yeni kateqoriyaya köçürülə bilər.</p>
+                        <h3 class="answer-subtitle">Kateqoriyanın dəyişdirilməsi</h3>
+                        <div class="field-list">
+                            <p><strong>Məhsulların seçilməsi</strong> — köçürülmək istənilən məhsullar siyahıdan seçilir.</p>
+                            <p><strong>Kateqoriyanı dəyiş</strong> — seçilmiş məhsullar üçün kateqoriya dəyişdirmə əməliyyatı seçilir.</p>
+                            <p><strong>Yeni kateqoriya</strong> — məhsulların keçiriləcəyi yeni kateqoriya seçilir.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 1.3 -->
+            <section class="qa-section" id="b1-s3">
+                <div class="content-heading">
+                    <h1 class="content-eyebrow">1. Nomenklatura və məhsul kartları</h1>
+                    <h2>1.3. Qiymətlər və marja</h2>
+                </div>
+
+                <div class="qa-item">
+                    <p class="qa-question">Maye dəyəri (alış qiyməti) ilə satış qiyməti arasındakı fərq necə tənzimlənir?</p>
+                    <p class="qa-answer">Maya dəyəri mədaxil qaiməsindəki alış qiymətinə əsasən avtomatik hesablanır, satış qiyməti isə əl ilə və ya marja faizi göstərməklə təyin olunur. Fərq (marja) sistem tərəfindən avtomatik hesablanıb hesabatlarda göstərilir.</p>
+                </div>
+                <div class="qa-item">
+                    <p class="qa-question">Fərqli qiymət növləri təyin etmək olarmı (pərakəndə, topdan, endirimli)?</p>
+                    <p class="qa-answer">Bəli, çox sistemdə "qiymət tipləri" funksiyası var — eyni məhsula bir neçə qiymət (pərakəndə, topdan, VIP, endirimli) təyin edilir və kassada müştəri tipinə görə uyğun qiymət seçilir.</p>
+                </div>
+            </section>
+
+            <!-- 2.1 -->
+            <section class="qa-section" id="b2-s1">
+                <div class="content-heading">
+                    <h1 class="content-eyebrow">2. Anbar uçotu (Malların hərəkəti)</h1>
+                    <h2>2.1. Mədaxil (Malın qəbulu)</h2>
+                </div>
+
+                <div class="qa-item">
+                    <p class="qa-question">Addım-addım: «Mədaxil qaiməsi» necə yaradılır?</p>
+                    <div class="qa-answer qa-answer--rich">
+                        <p>Daxilolma sənədi anbara yeni məhsulların əlavə edilməsi üçün yaradılır. Yeni daxilolma yaratmaq üçün müvafiq bölməyə keçilir və sənəd üzrə əsas məlumatlar doldurulur.</p>
+                        <img src="image/daxilolma.jpg" class="qa-image" alt="Daxilolmalar bölməsi">
+                        <div class="field-list">
+                            <p><strong>Nömrə</strong> — sənədin unikal nömrəsidir. Sistem tərəfindən avtomatik təyin oluna bilər və daxilolma sənədini müəyyən etmək üçün istifadə olunur.</p>
+                            <p><strong>Tarix</strong> — daxilolmanın yaradıldığı və ya məhsulların anbara daxil olduğu tarix və saat qeyd olunur.</p>
+                            <p><strong>Anbar</strong> — məhsulların hansı anbara daxil ediləcəyi seçilir. Anbar seçimi üçün “Seçin...” sahəsindən uyğun anbar seçilir.</p>
+                            <p><strong>Məhsullar</strong> — daxil ediləcək məhsullar bu bölmədən əlavə olunur. “Məhsullar” düyməsinə klikləməklə məhsul siyahısından lazımi məhsullar seçilir.</p>
+                            <p><strong>Miqdar</strong> — anbara daxil edilən məhsulun miqdarı qeyd olunur.</p>
+                            <p><strong>Maya Dəyəri</strong> — məhsulun alış və ya maya dəyəri göstərilir. Bu məlumat məhsulun anbara hansı dəyərlə daxil olduğunu müəyyənləşdirmək üçün istifadə olunur.</p>
+                            <p><strong>Vahid</strong> — məhsulun ölçü vahidi göstərilir. Məsələn, ədəd, kq, litr və s.</p>
+                            <p><strong>Qeyd</strong> — daxilolma ilə bağlı əlavə məlumat yazmaq üçün istifadə olunur.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <p class="qa-question">Təchizatçı necə seçilir və kağız qaimənin nömrəsi hara qeyd olunur?</p>
+                    <div class="qa-answer qa-answer--rich">
+                        <p>Təchizatçı məhsul və ya xidmətlərin müəssisəyə təqdim edilməsinə cavabdeh olan tərəfdir. Təchizatçının sistemə əlavə edilməsi zamanı onun əsas məlumatları, əlaqə vasitələri və ünvan məlumatları qeyd olunur.</p>
+                        <img src="image/techizatci.jpg" class="qa-image" alt="Təchizatçi bölməsi">
+                        <h3 class="answer-subtitle">Əsas məlumatlar bölməsində:</h3>
+                        <div class="field-list">
+                            <p><strong>Kod</strong> — təchizatçını sistemdə fərqləndirmək üçün istifadə olunan unikal kod qeyd edilir.</p>
+                            <p><strong>Ad</strong> — təchizatçının adı yazılır. Bu sahənin doldurulması məcburidir.</p>
+                            <p><strong>Aktiv</strong> — təchizatçının hazırda aktiv olub-olmadığını müəyyən edir. Aktiv olduqda təchizatçı digər əməliyyatlarda seçilə bilər.</p>
+                            <p><strong>Şirkətdir</strong> — təchizatçının şirkət olub-olmadığını göstərir.</p>
+                            <p><strong>ƏDV Ödəyicisidir</strong> — təchizatçının ƏDV ödəyicisi olub-olmadığını müəyyən edir.</p>
+                            <p><strong>Müştəri</strong> — həmin tərəfin eyni zamanda müştəri kimi də istifadə olunmasını göstərir.</p>
+                            <p><strong>Təchizatçı</strong> — tərəfin təchizatçı kimi sistemdə istifadə olunmasını müəyyən edir. Təchizatçı seçimi aktiv edildikdə həmin tərəf daxilolma və digər satınalma əməliyyatlarında təchizatçı kimi seçilə bilər.</p>
+                            <p><strong>VÖEN</strong> — təchizatçının vergi ödəyicisinin eyniləşdirmə nömrəsi qeyd edilir.</p>
+                            <p><strong>FİN</strong> — fiziki şəxsin şəxsiyyətini müəyyən edən FİN kodu qeyd edilir.</p>
+                            <p><strong>Telefon</strong> — təchizatçının əlaqə nömrəsi qeyd olunur.</p>
+                            <p><strong>E-poçt</strong> — təchizatçının elektron poçt ünvanı yazılır.</p>
+                            <p><strong>Qeyd</strong> — təchizatçı haqqında əlavə məlumatların qeyd edilməsi üçün istifadə olunur.</p>
+                            <p><strong>Hüquqi ünvan</strong> — təchizatçının rəsmi hüquqi ünvanı qeyd edilir.</p>
+                            <p><strong>Faktiki ünvan</strong> — təchizatçının faktiki fəaliyyət göstərdiyi ünvan yazılır.</p>
+                        </div>
+
+                        <div class="answer-divider"></div>
+
+                        <img src="image/kommersiya.jpg" class="qa-image" alt="Kommersiya və mühasibatliq bölməsi">
+                        <h3 class="answer-subtitle">Kommersiya və mühasibatlıq bölməsində:</h3>
+                        <div class="field-list">
+                            <p><strong>Üst Tərəf-müqabil</strong> — təchizatçının hansı üst tərəf-müqabilə aid olduğunu seçmək üçün istifadə olunur. Lazım olan tərəf-müqabil “Seçin...” sahəsindən seçilir.</p>
+                            <p><strong>Qrup</strong> — təchizatçının aid olduğu qrup seçilir. Bu seçim təchizatçıların sistemdə qruplaşdırılmasına və daha rahat idarə olunmasına imkan verir.</p>
+                            <p><strong>Qiymət növü</strong> — təchizatçı ilə aparılan əməliyyatlarda istifadə olunacaq qiymət növü seçilir.</p>
+                            <p><strong>Kart</strong> — təchizatçı ilə bağlı kart və ya müvafiq kart məlumatı qeyd olunur.</p>
+                            <p><strong>Bonus</strong> — təchizatçı üzrə tətbiq olunan bonus dəyəri qeyd edilir.</p>
+                            <p><strong>Debitor borclar hesabı</strong> — təchizatçı ilə bağlı yaranan debitor borcların hansı mühasibat hesabında uçota alınacağını müəyyən etmək üçün istifadə olunur.</p>
+                            <p><strong>Kreditor borclar hesabı</strong> — təchizatçı qarşısında yaranan kreditor borcların hansı mühasibat hesabında uçota alınacağını müəyyən edir.</p>
+                        </div>
+
+                        <div class="answer-divider"></div>
+
+                        <img src="image/bank-hesablari.jpg" class="qa-image" alt="Bank hesabları bölməsi">
+                        <h3 class="answer-subtitle">Bank hesabları bölməsində:</h3>
+                        <div class="field-list">
+                            <p><strong>Bank identifikasiyası</strong> — bankın identifikasiya məlumatı qeyd olunur.</p>
+                            <p><strong>Bank</strong> — təchizatçının hesabının yerləşdiyi bank seçilir və ya qeyd olunur.</p>
+                            <p><strong>Ünvan</strong> — bankın ünvanı göstərilir</p>
+                            <p><strong>Müxbir hesab</strong> — bank hesabı ilə bağlı müxbir hesab məlumatı qeyd olunur.</p>
+                            <p><strong>Bank hesabı</strong> — təchizatçının bank hesabının nömrəsi qeyd edilir.</p>
+                        </div>
+
+                        <p>Beləliklə, təchizatçının əsas məlumatları, kommersiya və mühasibatlıq məlumatları, həmçinin bank hesabları tam şəkildə qeyd olunmuş olur.</p>
+
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <p class="qa-question">Sənəd təsdiqləndikdən sonra anbarda olan məhsulun maya dəyəri necə dəyişir?</p>
+                    <p class="qa-answer">Sənəd təsdiqlənən kimi məhsulun anbar qalığı və maya dəyəri yenilənir; adətən orta çəkili maya dəyəri metodu ilə hesablanır.</p>
+                </div>
+            </section>
+
+            <!-- 2.2 -->
+            <section class="qa-section" id="b2-s2">
+                <div class="content-heading">
+                    <h1 class="content-eyebrow">2. Anbar uçotu (Malların hərəkəti)</h1>
+                    <h2>2.2. Silinmə (Məxaric / Spisaniye)</h2>
+                </div>
+
+                <div class="qa-item">
+                    <p class="qa-question">Mal hansı hallarda silinir (xarab olma, sınma, istifadə müddətinin bitməsi)?</p>
+                    <div class="qa-answer qa-answer--rich">
+                        <img src="image/silinmeler.jpg" class="qa-image" alt="Kommersiya və mühasibatliq bölməsi">
+                        <h3 class="answer-subtitle">Silinmə bölməsində:</h3>
+                        <div class="field-list">
+                            <p><strong>Nömrə</strong> — sənədə sistem tərəfindən avtomatik verilən nömrə (məsələn "WH/SCRAP/2026/000001"); əllə dəyişdirilmir.</p>
+                            <p><strong>Anbar</strong> — silinmənin hansı anbardan aparılacağını göstərir; qırmızı ulduzla işarələndiyi üçün mütləq seçilməlidir. Siyahıda yoxdursa, "+" ilə yeni anbar əlavə etmək olar.</p>
+                            <p><strong>Tarix</strong> — sənədin tarix və saatı; standart olaraq cari vaxt gəlir, "X" ilə silinib dəyişdirilə bilər.</p>
+                            <p><strong>Məhsullar</strong> — silinəcək məhsulların siyahısını göstərir. Cədvəldə hər sətirdə Məhsul adı, anbardakı cari Qalıq, silinəcək Miqdar, məhsulun Maya dəyəri və Vahidi görünür.</p>
+                            <p><strong>Axtar</strong> — Axtar sahəsi ilə silinəcək məhsullar siyahıya əlavə edilir. Sol tərəfdəki checkbox isə bir neçə sətri eyni anda seçib toplu əməliyyat (məsələn silmək) aparmaq üçündür.</p>
+                            <p><strong>Qeyd</strong> — silinmənin səbəbini (xarab olma, sınma və s.) qeyd etmək üçün sərbəst mətn sahəsidir.</p>
+                            <p><strong>Yekun məbləğ</strong> — sənədə əlavə olunan bütün məhsulların cəmi miqdarı və onların ümumi maya dəyəri.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <p class="qa-question">Silinmə səbəbi necə göstərilir və bu xərc hansı maddəyə yazılır?</p>
+                    <p class="qa-answer">Silinmə sənədi yaradılarkən "səbəb" sahəsindən uyğun variant seçilir. Bu məbləğ mühasibat hesabatlarında "Digər xərclər" və ya "Anbar itkiləri" maddəsinə yazılır.</p>
+                </div>
+            </section>
+
+            <!-- 2.3 -->
+            <section class="qa-section" id="b2-s3">
+                <div class="content-heading">
+                    <h1 class="content-eyebrow">2. Anbar uçotu (Malların hərəkəti)</h1>
+                    <h2>2.3. Anbarlararası yerdəyişmə (Transfer)</h2>
+                </div>
+
+                <div class="qa-item">
+                    <p class="qa-question">Malları «Əsas anbar»dan «Bar» və ya «Mətbəx» anbarına necə köçürmək olar?</p>
+                    <div class="qa-answer qa-answer--rich">
+                        <p>"Yerdəyişmə" sənədi yaradılır, göndərən anbar və qəbul edən anbar seçilir, köçürüləcək məhsullar və miqdar göstərilib sənəd təsdiqlənir.</p>
+                        <img src="image/yerdeyisme.jpg" class="qa-image" alt="Yerdəyişmə bölməsi">
+                        <h3 class="answer-subtitle">Yerdəyişmə bölməsində</h3>
+                        <div class="field-list">
+                            <p><strong>Nömrə</strong> — sənədə sistem tərəfindən avtomatik verilən nömrə (məsələn "WH/INT/2026/000001"); əllə dəyişdirilmir.</p>
+                            <p><strong>Tarix</strong> — sənədin tarix və saatı; standart olaraq cari vaxt gəlir, "X" ilə silinib dəyişdirilə bilər.</p>
+                            <p><strong>Anbardan</strong> — malın göndəriləcəyi (çıxış ediləcəyi) mənbə anbar; qırmızı ulduzla işarələndiyi üçün mütləqdir. Siyahıda yoxdursa "+" ilə yeni anbar əlavə edilə bilər.</p>
+                            <p><strong>Anbara</strong> — malın daxil olacağı (qəbul ediləcəyi) təyinat anbarı; bu da mütləq sahədir.</p>
+                            <p><strong>Məhsullar</strong> — köçürüləcək məhsulların siyahısını göstərir. Cədvəldə hər sətirdə Məhsul adı, göndərən anbardakı cari Qalıq, köçürüləcək Miqdar, məhsulun Maya dəyəri və Vahidi görünür.</p>
+                            <p><strong>Axtar və ya Məhsullar</strong> — Axtar sahəsi və ya "Məhsullar" düyməsi ilə köçürüləcək məhsullar siyahıya əlavə edilir. Checkbox isə bir neçə sətri eyni anda seçib toplu əməliyyat aparmaq üçündür.</p>
+                            <p><strong>Qeyd</strong> — yerdəyişmənin səbəbini və ya əlavə qeydləri yazmaq üçün sərbəst mətn sahəsidir.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <p class="qa-question">Yerdəyişmə zamanı malın çatmasını kim və hansı mərhələdə təsdiqləyir?</p>
+                    <p class="qa-answer">Adətən qəbul edən tərəfin (bar və ya mətbəx) məsul işçisi sənədi "Qəbul et" düyməsi ilə təsdiqləyir, bundan sonra mal həmin anbarın qalığına əlavə olunur.</p>
+                </div>
+            </section>
+
+            <!-- 2.4 -->
+            <section class="qa-section" id="b2-s4">
+                <div class="content-heading">
+                    <h1 class="content-eyebrow">2. Anbar uçotu (Malların hərəkəti)</h1>
+                    <h2>2.4. İnventarizasiya (Sayım)</h2>
+                </div>
+
+                <div class="qa-item">
+                    <p class="qa-question">Əllə sayım aparmaq üçün akt (blank) necə çap olunur?</p>
+                    <div class="qa-answer qa-answer--rich">
+                        <p>"İnventarizasiya" bölməsindən yeni akt yaradılır, sistem cari qalıqları boş sütun ilə çap formasına çıxarır, işçilər faktiki miqdarı əllə həmin blankda qeyd edir.</p>
+                        <img src="image/inventarizasiya.jpg" class="qa-image" alt="inventarizasiya bölməsi">
+                        <h3 class="answer-subtitle">İnventarizasiya bölməsində:</h3>
+                        <div class="field-list">
+                            <p><strong>Nömrə</strong> — sənədə sistem tərəfindən avtomatik verilən nömrə (məsələn "WH/ADJ/2026/000001"); əllə dəyişdirilmir.</p>
+                            <p><strong>Anbar</strong> — inventarizasiyanın hansı anbarda aparılacağını göstərir; qırmızı ulduzla işarələndiyi üçün mütləqdir. Siyahıda yoxdursa "+" ilə yeni anbar əlavə edilə bilər.</p>
+                            <p><strong>Tarix</strong> — sənədin tarix və saatı; standart olaraq cari vaxt gəlir, "X" ilə silinib dəyişdirilə bilər.</p>
+                            <p><strong>Məhsullar</strong> — sayılan məhsulların siyahısını göstərir. Cədvəldə hər sətirdə Məhsul adı, Qalıq, Sistem miqdarı (proqramda uçotda görünən miqdar), Sayılmış miqdar (əl ilə faktiki sayılıb daxil edilən miqdar), Miqdar (fərq — artıq və ya əskik), məhsulun Maya dəyəri və Vahidi görünür.</p>
+                            <p><strong>Axtar və ya Məhsullar</strong>— Axtar sahəsi və ya "Məhsullar" düyməsi ilə sayılacaq məhsullar siyahıya əlavə edilir. Checkbox isə bir neçə sətri eyni anda seçib toplu əməliyyat aparmaq üçündür.</p>
+                            <p><strong>Qeyd</strong> — inventarizasiya ilə bağlı əlavə qeydlər üçün sərbəst mətn sahəsidir.</p>
+                            <p><strong>Yekun məbləğ</strong> — sənədə daxil olan bütün məhsullar üzrə fərqin ümumi miqdarı və onun məbləğ ekvivalenti.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <p class="qa-question">Faktiki qalıqlar proqrama necə daxil edilir?</p>
+                    <p class="qa-answer">Blankdakı faktiki rəqəmlər inventarizasiya sənədində hər məhsulun qarşısına əl ilə yazılır (və ya barkod skaneri ilə sayılıb avtomatik cəmlənir).</p>
+                </div>
+                <div class="qa-item">
+                    <p class="qa-question">Sistem artıq və ya əskik gələn malları necə göstərir və bu fərqlər hansı sənədlə tənzimlənir?</p>
+                    <p class="qa-answer">Sistem faktiki miqdarı sistem qalığı ilə müqayisə edib fərqi göstərir. Sənəd təsdiqlənəndə artıqlıq avtomatik mədaxil, əskiklik isə silinmə kimi sistemə yazılır.</p>
+                </div>
+            </section>
+
+            <!-- 3.1 -->
+            <section class="qa-section" id="b3-s1">
+                <div class="content-heading">
+                    <h1 class="content-eyebrow">3. Kassa modulu (POS terminal)</h1>
+                    <h2>3.1. İş gününün başlanması və bağlanması</h2>
+                </div>
+
+                <div class="qa-item">
+                    <p class="qa-question">Kassir sistemə necə daxil olur (PIN-kod, kart, şifrə)?</p>
+                    <p class="qa-answer">Kassir öz istifadəçi adı/PIN-kodu, maqnit kartı və ya barmaq izi ilə sistemə giriş edir — istifadə olunan üsul sistemin təhlükəsizlik tənzimləmələrindən asılıdır.</p>
+                </div>
+                <div class="qa-item">
+                    <p class="qa-question">Növbə (smena) necə açılır və xırdalamaq üçün kassa qalığı necə daxil edilir?</p>
+                    <p class="qa-answer">Kassir daxil olduqdan sonra "Növbəni aç" düyməsinə basır və kassada olan başlanğıc nağd pul məbləğini daxil edir. Bu məbləğ "Kassa avansı" kimi sənədləşir.</p>
+                </div>
+                <div class="qa-item">
+                    <p class="qa-question">Z-hesabat necə çıxarılır və növbə necə qapadılır?</p>
+                    <p class="qa-answer">Növbə sonunda "Növbəni bağla" seçilir, sistem gün ərzindəki bütün satışları yekunlaşdırıb Z-hesabatı formalaşdırır. Nağd pul qalığı faktiki kassa ilə tutuşdurulur.</p>
+                </div>
+            </section>
+
+            <!-- 3.2 -->
+            <section class="qa-section" id="b3-s2">
+                <div class="content-heading">
+                    <h1 class="content-eyebrow">3. Kassa modulu (POS terminal)</h1>
+                    <h2>3.2. Çekin vurulması</h2>
+                </div>
+
+                <div class="qa-item">
+                    <p class="qa-question">Məhsul çekə necə əlavə olunur: skanerlə, axtarışla, yoxsa sürətli menyu düymələri ilə?</p>
+                    <p class="qa-answer">Hər üç üsul mümkündür: barkod skaneri ilə oxutmaq, məhsul adını axtarış sətrində yazmaq, və ya ekrandakı sürətli-satış düymələrinə toxunmaq.</p>
+                </div>
+                <div class="qa-item">
+                    <p class="qa-question">Məhsulun sayı necə dəyişdirilir və ya səhv vurulmuş mal çekdən necə silinir?</p>
+                    <p class="qa-answer">Çekdəki məhsula toxunub miqdar sahəsindən say dəyişdirilir. Səhv əlavə olunmuş məhsul seçilib "Sil" düyməsi ilə çekdən çıxarılır.</p>
+                </div>
+                <div class="qa-item">
+                    <p class="qa-question">Endirim necə tətbiq olunur (əllə daxil edilən və ya müştərinin loyallıq kartı ilə)?</p>
+                    <p class="qa-answer">Endirim ya kassir tərəfindən əl ilə faiz/məbləğ kimi daxil edilir, ya da müştərinin loyallıq kartı sistemə daxil ediləndə ona bağlı endirim avtomatik tətbiq olunur.</p>
+                </div>
+            </section>
+
+            <!-- 3.3 -->
+            <section class="qa-section" id="b3-s3">
+                <div class="content-heading">
+                    <h1 class="content-eyebrow">3. Kassa modulu (POS terminal)</h1>
+                    <h2>3.3. Ödəniş və qarışıq ödəniş növləri</h2>
+                </div>
+
+                <div class="qa-item">
+                    <p class="qa-question">Nağd ödəniş necə qəbul edilir və qalıq (qaytarılacaq məbləğ) necə hesablanır?</p>
+                    <p class="qa-answer">Kassir müştərinin verdiyi nağd məbləği daxil edir, sistem çekin cəmi ilə fərqi avtomatik hesablayıb qaytarılacaq qalığı ekranda göstərir.</p>
+                </div>
+                <div class="qa-item">
+                    <p class="qa-question">Məbləğ bank POS-terminalına necə göndərilir?</p>
+                    <p class="qa-answer">"Kartla ödəniş" seçiləndə, əgər kassa proqramı bank terminalına inteqrasiya olunubsa, məbləğ avtomatik terminala ötürülür; olmadıqda kassir məbləği əl ilə ayrıca daxil edir.</p>
+                </div>
+                <div class="qa-item">
+                    <p class="qa-question">Müştəri ödənişin bir hissəsini kartla, bir hissəsini nağd ödəmək istədikdə nə edilməlidir?</p>
+                    <p class="qa-answer">"Qarışıq ödəniş" seçimindən istifadə olunur — kassir cəmin bir hissəsini nağd, qalanını kart kimi ayrı-ayrı daxil edir.</p>
+                </div>
+            </section>
+
+            <!-- 3.4 -->
+            <section class="qa-section" id="b3-s4">
+                <div class="content-heading">
+                    <h1 class="content-eyebrow">3. Kassa modulu (POS terminal)</h1>
+                    <h2>3.4. Geri qaytarma (İadə) və ləğvetmə</h2>
+                </div>
+
+                <div class="qa-item">
+                    <p class="qa-question">Gün ərzində (növbə bağlanmamış) məhsulun qaytarılması necə rəsmiləşdirilir?</p>
+                    <p class="qa-answer">Kassada "İadə" funksiyasından həmin çek tapılır, qaytarılan məhsul seçilir və məbləğ müştəriyə geri qaytarılır — bu Z-hesabatında ayrıca əks olunur.</p>
+                </div>
+                <div class="qa-item">
+                    <p class="qa-question">Əvvəlki günlərdə alınmış malın qaytarılması necə həyata keçirilir?</p>
+                    <p class="qa-answer">Bağlanmış köhnə çeklər üçün adətən menecer icazəsi tələb olunur; "Köhnə çek üzrə iadə" bölməsindən çek tapılıb ayrıca iadə sənədi yaradılır.</p>
+                </div>
+            </section>
+
+            <!-- 4.1 -->
+            <section class="qa-section" id="b4-s1">
+                <div class="content-heading">
+                    <h1 class="content-eyebrow">4. Maliyyə və hesablaşmalar</h1>
+                    <h2>4.1. Borclar və təchizatçılarla hesablaşma</h2>
+                </div>
+
+                <div class="qa-item">
+                    <p class="qa-question">Hansı təchizatçıya nə qədər borcun olduğunu haradan görmək olar?</p>
+                    <p class="qa-answer">"Təchizatçılarla hesablaşma" hesabatından hər təchizatçı üzrə cari borc, ödənilmiş məbləğ və borcun hansı mədaxil qaiməsindən yarandığı görünür.</p>
+                </div>
+                <div class="qa-item">
+                    <p class="qa-question">Təchizatçıya ödəniş faktı proqrama necə daxil edilir?</p>
+                    <p class="qa-answer">"Ödəniş" sənədi yaradılır, ödəniş mənbəyi (nağd kassa və ya bank hesabı) seçilir, təchizatçı və məbləğ göstərilib sənəd təsdiqlənir — borc avtomatik azalır.</p>
+                </div>
+            </section>
+
+            <!-- 4.2 -->
+            <section class="qa-section" id="b4-s2">
+                <div class="content-heading">
+                    <h1 class="content-eyebrow">4. Maliyyə və hesablaşmalar</h1>
+                    <h2>4.2. Şirkətin xərcləri</h2>
+                </div>
+
+                <div class="qa-item">
+                    <p class="qa-question">Əməliyyat xərcləri necə qeyd olunur (icarə, təsərrüfat xərcləri, əməkhaqqı)?</p>
+                    <p class="qa-answer">"Xərclər" bölməsində xərc növü seçilib, məbləğ və ödəniş mənbəyi göstərilməklə xərc sənədi yaradılır.</p>
+                </div>
+                <div class="qa-item">
+                    <p class="qa-question">Cari anda kassada və ya seyfdə olan nağd pul qalığına haradan baxmaq olar?</p>
+                    <p class="qa-answer">"Kassalar" və ya "Maliyyə hesabatları" bölməsindən hər kassa/seyfin real vaxt rejimində cari qalığı izlənilə bilər.</p>
+                </div>
+            </section>
+
+            <!-- 5.1 -->
+            <section class="qa-section" id="b5-s1">
+                <div class="content-heading">
+                    <h1 class="content-eyebrow">5. İstehsalat (İstehsal prosesi və kalkulyasiya)</h1>
+                    <h2>5.1. Texnoloji xəritələr (Reseptura)</h2>
+                </div>
+
+                <div class="qa-item">
+                    <p class="qa-question">Hazır məhsul üçün tərkib (inqrediyentlər/xammal) necə daxil edilir?</p>
+                    <p class="qa-answer">Məhsul kartında "Reseptura" bölməsi açılır, hazır məhsula lazım olan xammal siyahısı və hər birinin miqdarı əlavə edilir; sistem bunlar əsasında maya dəyərini avtomatik hesablayır.</p>
+                </div>
+                <div class="qa-item">
+                    <p class="qa-question">İstehsal zamanı xammal itkisi (fire / təmizlənmə faizi) necə nəzərə alınır?</p>
+                    <p class="qa-answer">Reseptura sahəsində hər xammal üçün "itki faizi" göstərilir, sistem bu faizi nəzərə alaraq real sərf olunan miqdarı hesablayır.</p>
+                </div>
+            </section>
+
+            <!-- 5.2 -->
+            <section class="qa-section" id="b5-s2">
+                <div class="content-heading">
+                    <h1 class="content-eyebrow">5. İstehsalat (İstehsal prosesi və kalkulyasiya)</h1>
+                    <h2>5.2. İstehsalat aktı (Buraxılış)</h2>
+                </div>
+
+                <div class="qa-item">
+                    <p class="qa-question">İstehsalat sənədi necə yaradılır və xammal anbarından çıxış necə baş verir?</p>
+                    <p class="qa-answer">"İstehsalat aktı" yaradılır, hazırlanan məhsul və miqdarı göstərilir; sənəd təsdiqlənəndə reseptura əsasında lazımi xammal avtomatik anbardan silinir, hazır məhsul isə anbara mədaxil olunur.</p>
+                </div>
+                <div class="qa-item">
+                    <p class="qa-question">Əlavə xərclər (usta haqqı, elektrik və s.) hazır məhsulun maya dəyərinə necə oturur?</p>
+                    <p class="qa-answer">İstehsalat aktında "əlavə xərclər" sahəsinə uyğun məbləğ daxil edilir, sistem bu xərci hazırlanan məhsulların sayına bölüb maya dəyərinin üzərinə əlavə edir.</p>
+                </div>
+            </section>
+
+            <!-- 5.3 -->
+            <section class="qa-section" id="b5-s3">
+                <div class="content-heading">
+                    <h1 class="content-eyebrow">5. İstehsalat (İstehsal prosesi və kalkulyasiya)</h1>
+                    <h2>5.3. Yarımfabrikatlar</h2>
+                </div>
+
+                <div class="qa-item">
+                    <p class="qa-question">Digər məhsulların tərkibində istifadə olunan yarımfabrikatların istehsalı necə qeydiyyata alınır?</p>
+                    <p class="qa-answer">Yarımfabrikat ayrıca "yarımfabrikat" tipli kart kimi yaradılır, öz reseptura və istehsalat aktı ilə hazırlanır, sonra digər məhsulların reseptruasında adi xammal kimi istifadə oluna bilir.</p>
+                </div>
+            </section>
+
+            <!-- 6.1 -->
+            <section class="qa-section" id="b6-s1">
+                <div class="content-heading">
+                    <h1 class="content-eyebrow">6. Restoran modulu (Zal, Mətbəx və Qonaqlara xidmət)</h1>
+                    <h2>6.1. Zal və masaların idarə edilməsi</h2>
+                </div>
+
+                <div class="qa-item">
+                    <p class="qa-question">Zal planı və masaların sxemi sistemdə necə qurulur?</p>
+                    <p class="qa-answer">"Zal redaktoru" bölməsində masalar sürüklə-burax üsulu ilə vizual sxem üzərində yerləşdirilir, hər masaya nömrə və tutum təyin olunur.</p>
+                </div>
+                <div class="qa-item">
+                    <p class="qa-question">Masanın bir ofisiantdan digərinə ötürülməsi və ya qonağın başqa masaya keçirilməsi necə edilir?</p>
+                    <p class="qa-answer">Açıq sifariş üzərindən "Masanı dəyiş" və ya "Ofisiantı dəyiş" funksiyası istifadə olunur — sifariş öz tərkibi ilə birlikdə yeni masaya köçürülür.</p>
+                </div>
+            </section>
+
+            <!-- 6.2 -->
+            <section class="qa-section" id="b6-s2">
+                <div class="content-heading">
+                    <h1 class="content-eyebrow">6. Restoran modulu (Zal, Mətbəx və Qonaqlara xidmət)</h1>
+                    <h2>6.2. Sifarişin qəbulu və modifikatorlar</h2>
+                </div>
+
+                <div class="qa-item">
+                    <p class="qa-question">Masaya sifariş necə vurulur və yemək üçün modifikatorlar necə əlavə edilir?</p>
+                    <p class="qa-answer">Ofisiant masanı açıb menyudan yeməkləri seçir, hər yeməyin yanında əvvəlcədən təyin olunmuş modifikator siyahısından uyğun qeydi (şəkərsiz, orta bişmiş və s.) işarələyir.</p>
+                </div>
+                <div class="qa-item">
+                    <p class="qa-question">Mətbəxə/Bara çap (bilet/runner) necə gedir və ya mətbəx ekranında (KDS) necə görünür?</p>
+                    <p class="qa-answer">Sifariş təsdiqlənən kimi məhsulun kateqoriyasına görə avtomatik mətbəx/bar printerinə çap olunur, ya da KDS ekranında yeni sifariş kartı kimi görünür.</p>
+                </div>
+            </section>
+
+            <!-- 6.3 -->
+            <section class="qa-section" id="b6-s3">
+                <div class="content-heading">
+                    <h1 class="content-eyebrow">6. Restoran modulu (Zal, Mətbəx və Qonaqlara xidmət)</h1>
+                    <h2>6.3. Hesabın bölünməsi və bağlanması</h2>
+                </div>
+
+                <div class="qa-item">
+                    <p class="qa-question">Qonaqlar hesabı ayrı-ayrı ödəmək istədikdə çek necə bölünür?</p>
+                    <p class="qa-answer">"Hesabı böl" funksiyası ilə çekdəki mövqelər bir neçə alt-çekə bölünür (bərabər hissəyə və ya seçilmiş mövqelərə görə), hər hissə ayrıca ödənilir.</p>
+                </div>
+                <div class="qa-item">
+                    <p class="qa-question">Xidmət haqqı (servis faizi) avtomatik necə hesablanır?</p>
+                    <p class="qa-answer">Sistem tənzimləmələrində təyin olunmuş faiz çekin cəminə avtomatik əlavə olunur, zəruri hallarda kassir bunu əl ilə də dəyişə bilər.</p>
+                </div>
+            </section>
+
+            <!-- 7.1 -->
+            <section class="qa-section" id="b7-s1">
+                <div class="content-heading">
+                    <h1 class="content-eyebrow">7. CRM və Müştərilərlə iş</h1>
+                    <h2>7.1. Müştəri bazası və profili</h2>
+                </div>
+
+                <div class="qa-item">
+                    <p class="qa-question">Yeni müştəri necə əlavə olunur və alış tarixçəsinə haradan baxılır?</p>
+                    <p class="qa-answer">"Müştərilər" bölməsindən yeni profil yaradılır (ad, telefon, kart nömrəsi), müştərinin kartına daxil olub bütün əvvəlki alışlarının tarixçəsinə baxıla bilər.</p>
+                </div>
+                <div class="qa-item">
+                    <p class="qa-question">Müştərilərə kateqoriya və ya etiketlər (VIP, Daimi, Şikayətçi) necə təyin edilir?</p>
+                    <p class="qa-answer">Müştəri kartında "Etiket/Qrup" sahəsindən uyğun status seçilir; bu etiketlər sonradan filtrasiya və hədəfli kampaniyalar üçün istifadə olunur.</p>
+                </div>
+            </section>
+
+            <!-- 7.2 -->
+            <section class="qa-section" id="b7-s2">
+                <div class="content-heading">
+                    <h1 class="content-eyebrow">7. CRM və Müştərilərlə iş</h1>
+                    <h2>7.2. Loyallıq sistemi və bonuslar</h2>
+                </div>
+
+                <div class="qa-item">
+                    <p class="qa-question">Keşbek, bonus xalları və ya endirim kartları necə tənzimlənir və kassada necə tətbiq olunur?</p>
+                    <p class="qa-answer">Loyallıq proqramı tənzimləmələr bölməsində qurulur, kassada müştərinin kartı/telefonu daxil edilən kimi toplanmış bonus avtomatik görünür və ödənişdə istifadə oluna bilir.</p>
+                </div>
+            </section>
+
+            <!-- 7.3 -->
+            <section class="qa-section" id="b7-s3">
+                <div class="content-heading">
+                    <h1 class="content-eyebrow">7. CRM və Müştərilərlə iş</h1>
+                    <h2>7.3. Borc limitləri (Nisyə satışı)</h2>
+                </div>
+
+                <div class="qa-item">
+                    <p class="qa-question">Müştəriyə nisyə limitini necə təyin etmək və borc qalığına necə nəzarət etmək olar?</p>
+                    <p class="qa-answer">Müştəri kartında "Nisyə limiti" sahəsinə maksimum icazəli borc məbləği yazılır; limit aşıldıqda kassa xəbərdarlıq verir, cari borc müştəri kartında daim görünür.</p>
+                </div>
+            </section>
+
+            <!-- 8.1 -->
+            <section class="qa-section" id="b8-s1">
+                <div class="content-heading">
+                    <h1 class="content-eyebrow">8. Mühasibatlıq və Maliyyə hesabatları</h1>
+                    <h2>8.1. Hesablar və kassalar</h2>
+                </div>
+
+                <div class="qa-item">
+                    <p class="qa-question">Şirkətin bank hesabları və nəğd kassaları sistemə necə tanıdılır?</p>
+                    <p class="qa-answer">"Maliyyə hesabları" bölməsindən yeni bank hesabı və ya nəğd kassa əlavə olunur, hər birinin adı və başlanğıc qalığı göstərilir.</p>
+                </div>
+                <div class="qa-item">
+                    <p class="qa-question">Hesablararası daxili pul köçürmələri necə rəsmiləşdirilir?</p>
+                    <p class="qa-answer">"Daxili köçürmə" sənədi ilə bir hesabdan/kassadan digərinə məbləğ köçürülür, hər iki tərəfin qalığı avtomatik yenilənir.</p>
+                </div>
+            </section>
+
+            <!-- 8.2 -->
+            <section class="qa-section" id="b8-s2">
+                <div class="content-heading">
+                    <h1 class="content-eyebrow">8. Mühasibatlıq və Maliyyə hesabatları</h1>
+                    <h2>8.2. Əsas maliyyə hesabatları</h2>
+                </div>
+
+                <div class="qa-item">
+                    <p class="qa-question">Mənfəət və Zərər (P&amp;L) hesabatı haradan çıxarılır və rəqəmlər necə oxunmalıdır?</p>
+                    <p class="qa-answer">Hesabatlar bölməsində "P&amp;L" seçilir, dövr göstərilir; hesabat gəliri, satılan malın maya dəyərini, xərcləri və xalis mənfəəti sətir-sətir göstərir.</p>
+                </div>
+                <div class="qa-item">
+                    <p class="qa-question">Pul vəsaitlərinin hərəkəti (Cash Flow) hesabatı real pul qalığını necə göstərir?</p>
+                    <p class="qa-answer">Cash Flow hesabatı seçilmiş dövr üzrə bütün daxilolma və çıxışları göstərib dövrün sonunda faktiki nağd/bank qalığını hesablayır.</p>
+                </div>
+            </section>
+
+            <!-- 8.3 -->
+            <section class="qa-section" id="b8-s3">
+                <div class="content-heading">
+                    <h1 class="content-eyebrow">8. Mühasibatlıq və Maliyyə hesabatları</h1>
+                    <h2>8.3. Qarşılıqlı üzləşmə aktları (Akt sverki)</h2>
+                </div>
+
+                <div class="qa-item">
+                    <p class="qa-question">Təchizatçı və ya müştəri ilə üzləşmə aktı necə formalaşdırılır və çap edilir?</p>
+                    <p class="qa-answer">Təchizatçı/müştəri kartından "Üzləşmə aktı" seçilir, tarix aralığı göstərilir, sistem dövrdəki bütün əməliyyatları siyahılayıb çap formasına çıxarır.</p>
+                </div>
+            </section>
+
+            <!-- 9.1 -->
+            <section class="qa-section" id="b9-s1">
+                <div class="content-heading">
+                    <h1 class="content-eyebrow">9. HR və Əməkhaqqı (Kadrlar)</h1>
+                    <h2>9.1. Əməkdaş profili və giriş hüquqları</h2>
+                </div>
+
+                <div class="qa-item">
+                    <p class="qa-question">Yeni işçi necə qeydiyyata alınır və rollar üzrə icazələr necə tənzimlənir?</p>
+                    <p class="qa-answer">"İşçilər" bölməsindən yeni işçi əlavə olunur, ona uyğun rol (kassir, menecer, anbardar) seçilir; hər rolun giriş icazələri "Rollar" tənzimləmələrindən idarə olunur.</p>
+                </div>
+            </section>
+
+            <!-- 9.2 -->
+            <section class="qa-section" id="b9-s2">
+                <div class="content-heading">
+                    <h1 class="content-eyebrow">9. HR və Əməkhaqqı (Kadrlar)</h1>
+                    <h2>9.2. İş vaxtının uçotu</h2>
+                </div>
+
+                <div class="qa-item">
+                    <p class="qa-question">Növbə cədvəli və işə gəlib-getmə saatları sistemdə necə qeyd olunur?</p>
+                    <p class="qa-answer">Növbə cədvəli "Qrafik" bölməsində planlaşdırılır; işə giriş-çıxış isə kassaya/sistemə giriş-çıxış vaxtları əsasında avtomatik qeyd olunur.</p>
+                </div>
+            </section>
+
+            <!-- 9.3 -->
+            <section class="qa-section" id="b9-s3">
+                <div class="content-heading">
+                    <h1 class="content-eyebrow">9. HR və Əməkhaqqı (Kadrlar)</h1>
+                    <h2>9.3. Əməkhaqqı hesablanması</h2>
+                </div>
+
+                <div class="qa-item">
+                    <p class="qa-question">Sabit maaş, satışdan faiz (bonus) və ya saatlıq tariflər necə hesablanır?</p>
+                    <p class="qa-answer">Hər işçinin kartında əməkhaqqı növü seçilir; sistem işlənmiş saatlar və ya şəxsi satış məbləği əsasında hesablamanı avtomatik aparır.</p>
+                </div>
+                <div class="qa-item">
+                    <p class="qa-question">Avanslar və cərimələr əməkhaqqından necə tutulur?</p>
+                    <p class="qa-answer">İşçiyə verilən avans və ya cərimə ayrıca sənədlə qeyd olunur, əməkhaqqı hesablanarkən bu məbləğlər yekun məbləğdən avtomatik çıxılır.</p>
+                </div>
+            </section>
+
+            <!-- 10.1 -->
+            <section class="qa-section" id="b10-s1">
+                <div class="content-heading">
+                    <h1 class="content-eyebrow">10. Sistem tənzimləmələri və Avadanlıqlar</h1>
+                    <h2>10.1. Ticarət avadanlıqlarının qoşulması</h2>
+                </div>
+
+                <div class="qa-item">
+                    <p class="qa-question">Çek printerləri, barkod skanerləri və elektron tərəzilər sistemə necə inteqrasiya edilir?</p>
+                    <p class="qa-answer">Avadanlıq (USB, şəbəkə və ya Bluetooth ilə) kompüterə qoşulur, sistemin "Avadanlıqlar" tənzimləmələrindən uyğun model seçilib qoşulma yoxlanılır.</p>
+                </div>
+            </section>
+
+            <!-- 10.2 -->
+            <section class="qa-section" id="b10-s2">
+                <div class="content-heading">
+                    <h1 class="content-eyebrow">10. Sistem tənzimləmələri və Avadanlıqlar</h1>
+                    <h2>10.2. Filial və anbar strukturu</h2>
+                </div>
+
+                <div class="qa-item">
+                    <p class="qa-question">Şirkətə yeni filial və ya satış nöqtəsi necə əlavə olunur?</p>
+                    <p class="qa-answer">"Filiallar" bölməsindən yeni filial yaradılır, ünvan və əsas məlumatlar daxil edilir, filiala aid kassa və anbar(lar) təyin olunur.</p>
+                </div>
+            </section>
+
+            <!-- 11.1 -->
+            <section class="qa-section" id="b11-s1">
+                <div class="content-heading">
+                    <h1 class="content-eyebrow">11. Texniki nasazlıqlar və FAQ</h1>
+                    <h2>11.1. Problemlərin həlli</h2>
+                </div>
+
+                <div class="qa-item">
+                    <p class="qa-question">Çek printeri kəsmirsə və ya çap etmirsə nə etməli?</p>
+                    <p class="qa-answer">Əvvəlcə printerin kabel/şəbəkə bağlantısı və qidalanması yoxlanılır, kağızın düzgün taxılıb-taxılmadığına baxılır, sonra printer tənzimləmələrindən düzgün modelin seçildiyi yoxlanılır.</p>
+                </div>
+                <div class="qa-item">
+                    <p class="qa-question">Barkod skaneri kodları oxumursa ilk növbədə nə yoxlanılmalıdır?</p>
+                    <p class="qa-answer">Skanerin kabel/Bluetooth bağlantısı, işıq indikatoru, barkodun zədələnməmiş olması və skanerin klaviatura emulyasiyası rejimində işlədiyi yoxlanılmalıdır.</p>
+                </div>
+                <div class="qa-item">
+                    <p class="qa-question">İnternet kəsildikdə kassa işləyirmi və internet bərpa olunduqda məlumatlar necə sinxronlaşır?</p>
+                    <p class="qa-answer">Əksər müasir POS sistemləri "offline rejim"də işləməyə davam edir və satışları lokal yaddaşda saxlayır; internet bərpa olunduqda toplanmış məlumatlar avtomatik serverə sinxronlaşdırılır.</p>
+                </div>
+                <div class="qa-item">
+                    <p class="qa-question">Kassir növbəni vaxtından əvvəl səhvən bağlayıbsa nə etmək lazımdır?</p>
+                    <p class="qa-answer">Bu halda adətən menecer/admin hüququ ilə növbəni yenidən açmaq və ya düzəliş sənədi vasitəsilə əməliyyatları davam etdirmək lazımdır.</p>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="task.js"></script>
+</body>
+</html>
